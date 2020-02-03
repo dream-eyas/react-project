@@ -23,7 +23,7 @@ export const HomeLeft = styled.div`
 export const HomeRight = styled.div`
 	width: 280px;
 	float: right;
-    border: 1px solid blue;
+    // border: 1px solid blue;
 
 `;
 

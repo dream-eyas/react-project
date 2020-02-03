@@ -15,7 +15,7 @@ class List extends Component {
                 {
                     homeListList.map( (item) => (
                         <ListItem>
-                            <span className="iconfont">&#xe624;</span>
+                            <img className='pic' src={item.get('imgUrl')} />
                             <ListInfo>
                                 <h3 className='title'>{item.get('title')}</h3>
                                 <p className='desc'>{item.get('desc')}</p>
