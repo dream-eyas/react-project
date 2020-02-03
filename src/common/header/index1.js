@@ -17,9 +17,11 @@ class Header1 extends Component{
 
     getListArea (flag) {
 
+        const {pageList} = this.props;
+
         const aa = [];
 
-        this.props.pageList.forEach(function (item, index) {
+        pageList.forEach(function (item, index) {
             aa.push(<SearchInfoItem key={index}>{item}</SearchInfoItem>);
         });
 
