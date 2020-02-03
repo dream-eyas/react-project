@@ -97,10 +97,8 @@ const mapDispatchToProps = (dispatch) => {
             console.log('pageList' + pageList);
             const action = actionCreators.searchFocus();
             dispatch(action);
-            if (pageList.size === 0) {
-                const action1 = actionCreators.getList();
-                dispatch(action1);
-            }
+            // 只调取一次
+            (pageList.size === 0) && dispatch(actionCreators.getList());
         },
         handleInputBlur() {
             console.log("handleInputBlur");
