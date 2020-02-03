@@ -1,7 +1,7 @@
 import React from 'react';
 import {CSSTransition} from 'react-transition-group';
 import {connect} from 'react-redux';
-import * as actionCreators from  './store/actionCreators';
+import { actionCreators } from  './store/headerStoreIndex';
 
 
 import {
@@ -46,7 +46,7 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        focused: state.header.focused
+        focused: state.header.get('focused')
     }
 };
 
