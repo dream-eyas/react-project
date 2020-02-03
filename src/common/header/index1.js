@@ -1,14 +1,51 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {CSSTransition} from 'react-transition-group';
 import {connect} from 'react-redux';
 import { actionCreators } from  './store/headerStoreIndex';
 
 import {
-    HeaderWrapper, Logo, Nav, NavItem, NavSearch, Addition, Button, SearchWrapper
+    HeaderWrapper, Logo, Nav, NavItem, NavSearch,
+    SearchInfo,
+    SearchInfoTitle,
+    SearchInfoSwitch,
+    SearchInfoList,
+    SearchInfoItem,
+    Addition, Button, SearchWrapper
 } from './style';
+import index from "./index";
 
-const Header = (props) => {
-        const {focused, handleInputFocus, handleInputBlur} = props;
+class Header1 extends Component{
+
+    getListArea (flag) {
+
+        const aa = [];
+
+        this.props.pageList.forEach(function (item, index) {
+            aa.push(<SearchInfoItem key={item}>{item}</SearchInfoItem>);
+        });
+
+        if (flag) {
+            return (
+                <SearchInfo>
+                    <SearchInfoTitle>
+                        热门搜索
+                        <SearchInfoSwitch>
+                            换一批
+                        </SearchInfoSwitch>
+                        <SearchInfoList>
+                            {aa}
+                        </SearchInfoList>
+                    </SearchInfoTitle>
+                </SearchInfo>
+            )
+        }else {
+            return null;
+        }
+    }
+
+
+    render() {
+        const {focused, handleInputFocus, handleInputBlur} = this.props;
         return(
             <HeaderWrapper>
                 <Logo href='/' />
@@ -31,6 +68,7 @@ const Header = (props) => {
                             />
                         </CSSTransition>
                         <span className = {focused ? 'iconfont focused': 'iconfont'}>&#xe64d;</span>
+                        {this.getListArea(focused)}
                     </SearchWrapper>
                 </Nav>
                 <Addition>
@@ -41,12 +79,14 @@ const Header = (props) => {
                 </Addition>
             </HeaderWrapper>
         );
-};
+    }
+}
 
 const mapStateToProps = (state) => {
     return {
-        focused: state.get('header').get('focused')
-    }
+        focused: state.get('header').get('focused'),
+        pageList: state.get('header').get('pageList')
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -56,6 +96,7 @@ const mapDispatchToProps = (dispatch) => {
             const action = actionCreators.searchFocus();
             dispatch(action);
             const action1 = actionCreators.getList();
+            dispatch(action1);
         },
         handleInputBlur() {
             console.log("handleInputBlur");
@@ -65,5 +106,5 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header1);
 

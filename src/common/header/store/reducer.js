@@ -2,7 +2,8 @@ import * as actionTypes from './actionTypes';
 import {fromJS} from 'immutable';
 
 const defaultState = fromJS({
-    focused: false
+    focused: false,
+    pageList: []
 });
 
 export default (state = defaultState, action) => {
@@ -20,6 +21,8 @@ export default (state = defaultState, action) => {
         // // 修改newState数据并返回
         // newState.focused = false;
         return state.set('focused', false);
+    } else if (type === actionTypes.CHANGE_HEADER_LIST){
+        return state.set('pageList', action.data)
     }
     return state;
 }
