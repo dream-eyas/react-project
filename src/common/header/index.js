@@ -1,7 +1,7 @@
 import React from 'react';
 import {CSSTransition} from 'react-transition-group';
 import {connect} from 'react-redux';
-import {searchFocus, searchBlur} from  './store/actionCreators';
+import * as actionCreators from  './store/actionCreators';
 
 
 import {
@@ -54,12 +54,12 @@ const mapDispatchToProps = (dispatch) => {
     return {
         handleInputFocus() {
             console.log("handleInputFocus");
-            const action = searchFocus();
+            const action = actionCreators.searchFocus();
             dispatch(action);
         },
         handleInputBlur() {
             console.log("handleInputBlur");
-            const action = searchBlur();
+            const action = actionCreators.searchBlur();
             dispatch(action);
         }
     }
