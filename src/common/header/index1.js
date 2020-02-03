@@ -12,7 +12,6 @@ import {
     SearchInfoItem,
     Addition, Button, SearchWrapper
 } from './style';
-import index from "./index";
 
 class Header1 extends Component{
 

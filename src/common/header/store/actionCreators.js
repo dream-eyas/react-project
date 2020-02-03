@@ -1,17 +1,19 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
+// 内部用
+const changeHeaderList = (data) => ({
+    type: actionTypes.CHANGE_HEADER_LIST,
+    data
+});
+
+// 外部用
 export const searchFocus = () => ({
     type: actionTypes.SEARCH_FOCUS
 });
 
 export const searchBlur = () => ({
     type: actionTypes.SEARCH_BLUR
-});
-
-export const changeHeaderList = (data) => ({
-    type: actionTypes.CHANGE_HEADER_LIST,
-    data
 });
 
 export const getList = () => {
