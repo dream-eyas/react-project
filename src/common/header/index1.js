@@ -21,7 +21,7 @@ class Header1 extends Component{
         const aa = [];
 
         this.props.pageList.forEach(function (item, index) {
-            aa.push(<SearchInfoItem key={item}>{item}</SearchInfoItem>);
+            aa.push(<SearchInfoItem key={index}>{item}</SearchInfoItem>);
         });
 
         if (flag) {
