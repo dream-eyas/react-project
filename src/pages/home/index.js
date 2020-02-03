@@ -1,12 +1,28 @@
 import React, {Component} from 'react';
+import List from './component/List';
+import Recommend from './component/Recommend';
+import Topic from './component/Topic';
+import Writer from './component/Writer';
+
 import {
-    HomeWrapper
+    HomeWrapper,
+    HomeLeft,
+    HomeRight
 } from './style';
 
 class Home extends Component {
     render() {
         return (
-            <HomeWrapper>Home</HomeWrapper>
+            <HomeWrapper>
+                <HomeLeft>
+                    <Topic />
+                    <List />
+                </HomeLeft>
+                <HomeRight>
+                    <Recommend />
+                    <Writer />
+                </HomeRight>
+            </HomeWrapper>
         );
     }
 }
