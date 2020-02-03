@@ -14,7 +14,7 @@ class List extends Component {
             <div>
                 {
                     homeListList.map( (item) => (
-                        <ListItem>
+                        <ListItem  key={item.get('id')}>
                             <img className='pic' src={item.get('imgUrl')} />
                             <ListInfo>
                                 <h3 className='title'>{item.get('title')}</h3>

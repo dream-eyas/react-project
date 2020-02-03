@@ -7,6 +7,7 @@ const defaultState = fromJS({
 });
 
 export default (state = defaultState, action) => {
+    console.log("header");
     console.log(action);
     console.log(action.type);
     const type = action.type;

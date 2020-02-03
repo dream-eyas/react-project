@@ -46,10 +46,10 @@ export const TopicItem = styled.div`
 	color: #000;
 	border: 1px solid #dcdcdc;
 	border-radius: 4px;
-	.iconfont {
+	.topic-pic {
 		display: block;
 		float: left;
-		width: 15px;
+		width: 32px;
 		height: 32px;
 		margin-right: 10px;
 	}
