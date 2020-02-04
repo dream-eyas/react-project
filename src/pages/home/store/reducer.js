@@ -16,23 +16,34 @@ export default (state = defaultState, action) => {
     const type = action.type;
     switch (type) {
         case actionTypes.CHANGE_HOME_DATA :
-            return state.merge({
-                'homeTopicList': fromJS(action.homeTopicList),
-                'homeListList': fromJS(action.homeListList),
-                'homeRecommendList': fromJS(action.homeRecommendList),
-            });
+            return changeHomeData(state, action);
         case actionTypes.CHANGE_HOME_LIST_DATA :
-            console.log("homeListList" + state.get('homeListList'));
-            const newState = state.get('homeListList');
-            return state.merge({
-                    'homeListList': newState.concat(fromJS(action.result))
-                });
+            return changeHomeListData(state, action);
         case actionTypes.TOGGLE_TOP_SHOW :
-            // 获取flag
-            const flag = action.flag;
-            return state.set('showScroll', flag);
-
+            return toggleTopShow(state, action);
         default:
             return state;
     }
 }
+
+const changeHomeData = (state, action) =>{
+    return state.merge({
+        'homeTopicList': fromJS(action.homeTopicList),
+        'homeListList': fromJS(action.homeListList),
+        'homeRecommendList': fromJS(action.homeRecommendList),
+    });
+};
+
+const changeHomeListData = (state, action) =>{
+    console.log("homeListList" + state.get('homeListList'));
+    const newState = state.get('homeListList');
+    return state.merge({
+        'homeListList': newState.concat(fromJS(action.result))
+    });
+};
+
+const toggleTopShow = (state, action) =>{
+    // 获取flag
+    const flag = action.flag;
+    return state.set('showScroll', flag);
+};
