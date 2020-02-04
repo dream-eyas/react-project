@@ -42,9 +42,15 @@ class Home extends Component {
         this.bindEvents();
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.prop.changeScrollTopShow)
+    }
+
     bindEvents() {
         window.addEventListener('scroll', this.props.changeScrollTopShow)
     }
+
+
 
 }
 
@@ -60,7 +66,7 @@ const mapDispatch = (dispatch) => ({
         },
         changeScrollTopShow() {
             console.log(document.documentElement.scrollTop);
-            if ( document.documentElement.scrollTop > 400 ){
+            if ( document.documentElement.scrollTop > 100 ){
                 dispatch(actionCreators.toggleTopShow(true))
             } else {
                 dispatch(actionCreators.toggleTopShow(false))
