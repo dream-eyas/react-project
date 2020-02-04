@@ -5,7 +5,8 @@ import {actionTypes} from '../store/homeStoreIndex';
 const defaultState = fromJS({
     homeTopicList: [],
     homeListList: [],
-    homeRecommendList: []
+    homeRecommendList: [],
+    showScroll: false
 });
 
 export default (state = defaultState, action) => {
@@ -23,9 +24,14 @@ export default (state = defaultState, action) => {
         case actionTypes.CHANGE_HOME_LIST_DATA :
             console.log("homeListList" + state.get('homeListList'));
             const newState = state.get('homeListList');
-        return state.merge({
-                'homeListList': newState.concat(fromJS(action.result))
-            });
+            return state.merge({
+                    'homeListList': newState.concat(fromJS(action.result))
+                });
+        case actionTypes.TOGGLE_TOP_SHOW :
+            // 获取flag
+            const flag = action.flag;
+            return state.set('showScroll', flag);
+
         default:
             return state;
     }

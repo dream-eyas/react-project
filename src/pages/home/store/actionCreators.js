@@ -35,3 +35,9 @@ export const getMoreList = () => {
         });
     }
 };
+
+
+export const toggleTopShow = (flag) => ({
+    type: actionTypes.TOGGLE_TOP_SHOW,
+    flag: fromJS(flag)
+});
