@@ -1,4 +1,4 @@
-import * as actionTypes from './actionTypes';
+import { actionTypes } from  './homeStoreIndex';
 import axios from 'axios';
 
 
