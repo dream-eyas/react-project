@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
 
-class Detail extends Component {
+
+class Detail extends PureComponent {
     render() {
         return (
             <div>detail</div>
@@ -8,4 +10,4 @@ class Detail extends Component {
     }
 }
 
-export default Detail;
+export default connect(null, null)(Detail);

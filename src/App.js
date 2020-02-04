@@ -14,8 +14,8 @@ function App() {
         <Provider store={store}>
             <GlobalStyle/>
             <GlobalStyleIcon/>
-            <Header1/>
             <BrowserRouter>
+                <Header1/>
                 <Route path='/' exact component = {Home} />
                 <Route path='/detail' exact component = {Detail} />
             </BrowserRouter>

@@ -43,11 +43,11 @@ class Home extends PureComponent {
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.prop.changeScrollTopShow)
+        window.removeEventListener('scroll', this.props.changeScrollTopShow);
     }
 
     bindEvents() {
-        window.addEventListener('scroll', this.props.changeScrollTopShow)
+        window.addEventListener('scroll', this.props.changeScrollTopShow);
     }
 
 
