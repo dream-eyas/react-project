@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import List from './component/List';
 import Recommend from './component/Recommend';
@@ -14,7 +14,7 @@ import {
     BackTop
 } from './style';
 
-class Home extends Component {
+class Home extends PureComponent {
 
     handleScrollTop() {
         window.scrollTo(0, 0);
