@@ -17,7 +17,7 @@ export const HomeLeft = styled.div`
 		width: 625px;
 		height: 270px;
 	};
-    // border: 1px solid green;
+     //border: 1px solid green;
 `;
 
 export const HomeRight = styled.div`
@@ -40,7 +40,7 @@ export const TopicItem = styled.div`
 	line-height: 32px;
 	margin-left: 18px;
 	margin-bottom: 18px;
-	padding-right: 10px
+	padding-right: 10px;
 	background: #f7f7f7;
 	font-size: 14px;
 	color: #000;
