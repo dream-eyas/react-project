@@ -151,8 +151,8 @@ export const SearchInfoItem = styled.a`
 export const Addition = styled.div`
     // border: 1px solid red;
     position: absolute;
-    right: 0px;
-    top: 0px;
+    right: 0;
+    top: 0;
     height: 56px;
 `;
 
